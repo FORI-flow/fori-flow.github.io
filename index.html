@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Артём FORI — веб-разработчик. Создаю лендинги, сайты компаний и каталоги с онлайн-записью. Посмотрите живые примеры и обсудите проект в Telegram.">
+  <meta name="theme-color" content="#08090b">
+  <title>FORI — Артём, разработка сайтов для бизнеса</title>
+  <link rel="stylesheet" href="style.css?v=star-drift">
+  <script src="app.js?v=star-drift" defer></script>
+</head>
+<body id="top">
+  <div class="site-intro" id="site-intro" hidden>
+    <div class="intro-reel" aria-hidden="true"></div>
+    <div class="intro-mark" aria-hidden="true">FORI</div>
+    <div class="intro-controls">
+      <button type="button" id="skip-intro">Пропустить интро</button>
+      <button type="button" id="pause-intro">Пауза</button>
+      <div class="intro-track" aria-hidden="true"><div></div></div>
+    </div>
+  </div>
+  <header class="shell masthead">
+    <a class="brand" href="#top">FORI</a>
+    <div class="masthead-actions">
+      <a class="header-contact" href="https://t.me/FORI_FLL">Telegram</a>
+      <button class="portfolio-menu-toggle button outline small" type="button" aria-haspopup="dialog" aria-controls="portfolio-menu">Меню <span aria-hidden="true"></span></button>
+    </div>
+  </header>
+  <dialog id="portfolio-menu" aria-label="Навигация">
+    <div class="portfolio-shutters" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="portfolio-menu-top">
+      <span class="brand">FORI</span>
+      <form method="dialog"><button class="button outline" autofocus>Закрыть меню</button></form>
+    </div>
+    <nav id="site-nav" aria-label="Основная навигация">
+      <a href="#work">Работы</a>
+      <a href="#services">Услуги</a>
+      <a href="#process">Как работаю</a>
+      <a href="#about">Резюме</a>
+    </nav>
+    <a class="button portfolio-menu-contact" href="https://t.me/FORI_FLL">Написать в Telegram</a>
+    <div class="portfolio-menu-orbit" aria-hidden="true"></div>
+  </dialog>
+  <main>
+    <section class="shell hero" aria-labelledby="intro">
+      <div class="hero-content">
+        <p class="identity">Артём · Веб-разработчик</p>
+        <h1 id="intro" aria-label="FORI"><span aria-hidden="true">F</span><span aria-hidden="true">O</span><span aria-hidden="true">R</span><span aria-hidden="true">I</span></h1>
+        <p class="hero-line">Разрабатываю сайты для бизнеса</p>
+        <p class="hero-help">Помогу понять, какой сайт вам нужен, даже если пока нет ТЗ. Спроектирую путь от первого экрана до заявки, заказа или записи.</p>
+        <div class="actions">
+          <a class="button" href="#contact">Обсудить проект</a>
+          <a class="button outline" href="#work">Смотреть работы</a>
+        </div>
+      </div>
+      <canvas class="hero-sky" aria-hidden="true"></canvas>
+      <div class="hero-art">
+        <div class="launch-stage" aria-hidden="true">
+          <span class="star-wave"></span>
+          <span class="star-glint"></span>
+          <span class="launch-star">
+            <span class="star-rays"></span>
+            <span class="star-core"></span>
+          </span>
+        </div>
+      </div>
+    </section>
+    <section class="portfolio-bridge" id="journey" aria-labelledby="bridge-title">
+      <div class="bridge-stage">
+        <div class="bridge-base"><div class="bridge-copy">
+          <h2 id="bridge-title">Сайт с понятной задачей</h2>
+          <p>Посетитель должен быстро понять, что вы предлагаете, и легко сделать следующий шаг. В одном проекте это выбор квартиры, в другом — запись на приём или знакомство с вашими работами.</p>
+          <a class="button outline" href="#showcase">К проектам</a>
+        </div></div>
+        <div class="bridge-mask" aria-hidden="true">
+          <div class="bridge-sheet">
+            <div class="bridge-surface"><div class="bridge-tiles">
+              <div class="bridge-tile"><img src="assets/apartment.jpg" alt=""><span>APARTMENT</span></div>
+              <div class="bridge-tile"><img src="assets/baikal.jpg" alt=""><span>Байкал Шарм</span></div>
+              <div class="bridge-tile"><img src="assets/semka.jpg" alt=""><span>semkasemka</span></div>
+              <div class="bridge-tile"><img src="assets/refformat.webp" alt=""><span>Refformat</span></div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="shell work" id="work" aria-labelledby="work-heading">
+      <div class="project-wall" id="showcase">
+        <div class="wall-heading">
+          <h2 id="work-heading">Работы</h2>
+          <p>Откройте кейс, чтобы полистать сайт и посмотреть, что я реализовал.</p>
+        </div>
+        <div class="wall-cards"></div>
+      </div>
+      <div class="section-top catalog-top">
+        <h3>Каталог проектов</h3>
+        <div class="filters" role="group" aria-label="Фильтр проектов">
+          <button type="button" data-filter="all" aria-pressed="true">Все</button>
+          <button type="button" data-filter="promo" aria-pressed="false">Промосайты</button>
+          <button type="button" data-filter="service" aria-pressed="false">Веб-сервисы</button>
+        </div>
+      </div>
+      <details class="catalog-settings"><summary>Поиск и вид работ</summary><div class="catalog-tools" aria-label="Настройки каталога">
+        <label><span>Поиск</span><input id="project-search" type="search" placeholder="Название или тип проекта"></label>
+        <label><span>Сортировка</span><select id="project-sort"><option value="featured">Избранное</option><option value="title">По названию</option></select></label>
+        <fieldset class="view-switch"><legend>Вид каталога</legend>
+          <label><input type="radio" name="view" value="cards" checked>Витрина</label>
+          <label><input type="radio" name="view" value="list">Список</label>
+        </fieldset>
+      </div>
+      </details>
+      <p class="sr-only results" role="status" id="filter-status">Найдено проектов: 4</p>
+      <div class="list-header" hidden aria-hidden="true"><span>Проект</span><span>Тип работы</span><span>Кейс</span></div>
+      <div class="work-gallery">
+      <div class="gallery-selector" hidden>
+        <p>Выберите проект и сравните, как он выглядит на компьютере и телефоне.</p>
+        <div class="gallery-toolbar">
+          <div id="gallery-projects" role="group" aria-label="Выбор проекта"></div>
+          <div class="gallery-device" role="group" aria-label="Размер предпросмотра">
+            <button type="button" data-device="desktop" aria-pressed="true">Компьютер</button>
+            <button type="button" data-device="phone" aria-pressed="false">Телефон</button>
+          </div>
+        </div>
+      </div>
+      <div class="projects">
+        <div class="gallery-screen" aria-hidden="true" hidden>
+          <div class="screen-bar"><span id="screen-name"></span></div>
+          <div class="screen-viewport"><iframe id="gallery-frame" title="Обложка сайта" tabindex="-1" inert sandbox="allow-scripts allow-same-origin"></iframe></div>
+        </div>
+        <article class="project" data-category="service">
+          <button class="case-button" type="button" data-case="refformat" aria-label="Открыть сайт Refformat" aria-haspopup="dialog">
+            <img src="assets/refformat.webp" alt="" width="960" height="600">
+            <span class="project-info"><span><strong>Refformat</strong><span class="type">Демо стоматологии · Онлайн-запись</span></span><span class="open">Открыть сайт</span></span>
+          </button>
+        </article>
+        <article class="project" data-category="service">
+          <button class="case-button" type="button" data-case="apartment" aria-label="Открыть сайт APARTMENT" aria-haspopup="dialog">
+            <img src="assets/apartment.jpg" alt="" width="960" height="600" loading="lazy">
+            <span class="project-info"><span><strong>APARTMENT</strong><span class="type">Демо каталога · 3D</span></span><span class="open">Открыть сайт</span></span>
+          </button>
+        </article>
+        <article class="project" data-category="promo">
+          <button class="case-button" type="button" data-case="baikal" aria-label="Открыть сайт Байкал Шарм" aria-haspopup="dialog">
+            <img src="assets/baikal.jpg" alt="" width="960" height="600" loading="lazy">
+            <span class="project-info"><span><strong>Байкал Шарм</strong><span class="type">Туристический сайт</span></span><span class="open">Открыть сайт</span></span>
+          </button>
+        </article>
+        <article class="project" data-category="promo">
+          <button class="case-button" type="button" data-case="semka" aria-label="Открыть сайт semkasemka" aria-haspopup="dialog">
+            <img src="assets/semka.jpg" alt="" width="960" height="600" loading="lazy">
+            <span class="project-info"><span><strong>semkasemka</strong><span class="type">Портфолио фотографа</span></span><span class="open">Открыть сайт</span></span>
+          </button>
+        </article>
+      </div>
+      <div class="gallery-nav" role="group" aria-label="Листать проекты" hidden>
+        <button class="button outline" id="gallery-prev" type="button">Предыдущий</button>
+        <button class="button outline" id="gallery-next" type="button">Следующий</button>
+      </div>
+      <div class="gallery-details" hidden>
+        <div class="gallery-copy" aria-live="polite">
+          <p class="type" id="gallery-type"></p>
+          <h3 id="gallery-title"></h3>
+          <p id="gallery-description"></p>
+          <ul class="service-tags" id="gallery-features" aria-label="Что есть в проекте"></ul>
+        </div>
+        <button class="button" id="gallery-open" type="button" aria-haspopup="dialog">Открыть сайт</button>
+      </div>
+      </div>
+    </section>
+    <section class="shell services" id="services" aria-labelledby="services-heading">
+      <div class="services-heading">
+        <h2 id="services-heading">Услуги</h2>
+        <p>Выберите задачу, чтобы увидеть состав работ.</p>
+      </div>
+      <div class="service-catalog">
+        <article class="service-item">
+          <h3><button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-panel-1">
+            <span><strong>Лендинг</strong><small>Одна страница для продукта или услуги</small></span><span class="service-plus" aria-hidden="true"></span>
+          </button></h3>
+          <div id="service-panel-1" class="service-panel" inert><div><div class="service-body">
+            <p>Соберу структуру, напишу тексты, оформлю предложение и добавлю форму заявки.</p>
+            <ul class="service-tags"><li>Адаптивный дизайн</li><li>Форма заявки</li></ul>
+            <a href="https://t.me/FORI_FLL" class="button outline small">Обсудить услугу</a>
+          </div></div></div>
+        </article>
+        <article class="service-item">
+          <h3><button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-panel-2">
+            <span><strong>Сайт компании</strong><small>Когда нужно показать услуги, команду и контакты</small></span><span class="service-plus" aria-hidden="true"></span>
+          </button></h3>
+          <div id="service-panel-2" class="service-panel" inert><div><div class="service-body">
+            <p>Разработаю страницы под разные услуги, объединю их навигацией и помогу с доменом и размещением.</p>
+            <ul class="service-tags"><li>Страницы услуг</li><li>Подключение домена</li></ul>
+            <a href="https://t.me/FORI_FLL" class="button outline small">Обсудить услугу</a>
+          </div></div></div>
+        </article>
+        <article class="service-item">
+          <h3><button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-panel-3">
+            <span><strong>Каталог и онлайн-запись</strong><small>Для выбора товара, услуги или свободного времени</small></span><span class="service-plus" aria-hidden="true"></span>
+          </button></h3>
+          <div id="service-panel-3" class="service-panel" inert><div><div class="service-body">
+            <p>Соберу каталог, карточки, поиск или фильтры. Если нужен сценарий записи, добавлю выбор специалиста и времени.</p>
+            <ul class="service-tags"><li>Карточки и фильтры</li><li>Онлайн-запись</li></ul>
+            <a href="https://t.me/FORI_FLL" class="button outline small">Обсудить услугу</a>
+          </div></div></div>
+        </article>
+        <article class="service-item">
+          <h3><button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-panel-4">
+            <span><strong>Портфолио и интерактив</strong><small>Для работ, которые важно показать в деталях</small></span><span class="service-plus" aria-hidden="true"></span>
+          </button></h3>
+          <div id="service-panel-4" class="service-panel" inert><div><div class="service-body">
+            <p>Соберу подборку проектов, галерею и страницы кейсов. Добавлю анимацию или 3D, если они помогают показать работу.</p>
+            <ul class="service-tags"><li>Галерея и кейсы</li><li>Анимация и 3D</li></ul>
+            <a href="https://t.me/FORI_FLL" class="button outline small">Обсудить услугу</a>
+          </div></div></div>
+        </article>
+        <article class="service-item">
+          <h3><button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-panel-5">
+            <span><strong>Поиск и аналитика</strong><small>Чтобы сайт был готов к поиску, а вы видели посещения</small></span><span class="service-plus" aria-hidden="true"></span>
+          </button></h3>
+          <div id="service-panel-5" class="service-panel" inert><div><div class="service-body">
+            <p>Добавлю сайт в Яндекс Вебмастер, подготовлю страницы к индексации и проверю их статус. Подключу Яндекс Метрику, настрою цели и покажу, где смотреть посещения, источники переходов и действия посетителей.</p>
+            <ul class="service-tags"><li>Яндекс Вебмастер</li><li>Яндекс Метрика</li></ul>
+            <a href="https://t.me/FORI_FLL" class="button outline small">Обсудить услугу</a>
+          </div></div></div>
+        </article>
+      </div>
+    </section>
+    <section class="shell process" id="process" aria-labelledby="process-title">
+      <h2 id="process-title">Как работаю</h2>
+      <div class="process-track"><span class="process-mascot" aria-hidden="true"><i></i><i></i></span><ul class="steps">
+        <li><span class="step-icon" aria-hidden="true">◎</span><h3>Задача</h3><p>Уточняем, для кого сайт и что посетитель должен сделать.</p></li>
+        <li><span class="step-icon" aria-hidden="true">▤</span><h3>Прототип</h3><p>Согласуем структуру и первый экран, прежде чем собирать страницы.</p></li>
+        <li><span class="step-icon" aria-hidden="true">‹›</span><h3>Разработка</h3><p>Собираю сайт и проверяю мобильную версию и основные сценарии.</p></li>
+        <li><span class="step-icon" aria-hidden="true">✦</span><h3>Запуск</h3><p>Публикую сайт и помогаю настроить поиск и аналитику.</p></li>
+      </ul></div>
+      <h3 class="faq-title">Частые вопросы</h3>
+      <div class="service-list">
+        <details><summary>Можно начать с одной страницы?</summary><p>Да. Для одного предложения часто достаточно лендинга. Если нужен каталог или запись, обсудим их отдельно.</p></details>
+        <details><summary>Что делать, если у меня пока нет ТЗ?</summary><p>Расскажите, чем занимается ваш бизнес и как клиенты сейчас к вам обращаются. Помогу определить задачу сайта, структуру и то, что стоит включить в первую версию.</p></details>
+        <details><summary>Как узнать стоимость?</summary><p>Напишите в Telegram, что хотите запустить, и приложите примеры, если они есть. Стоимость и сроки обсудим, когда определим объём работы.</p></details>
+      </div>
+    </section>
+    <section class="shell about" id="about">
+      <div><h2>Резюме</h2><p>Артём, веб-разработчик. Больше трёх лет занимаюсь веб-разработкой. Учусь на третьем курсе РТУ МИРЭА по программе «Технологическое предпринимательство». Умею продавать и применяю это в разработке: продумываю, как показать ценность продукта и помочь посетителю сделать следующий шаг.</p></div>
+      <div class="contact"><h3>Для работодателей</h3><a class="button outline" href="https://t.me/FORI_FLL" data-draft="Артём, здравствуйте! Хочу обсудить с вами вакансию веб-разработчика.">Предложить вакансию</a></div>
+    </section>
+    <section class="shell project-contact" id="contact" aria-labelledby="contact-title">
+      <div>
+        <h2 id="contact-title">Обсудим ваш сайт</h2>
+        <p>Расскажите о бизнесе в двух-трёх предложениях. Помогу выбрать формат сайта и определить объём работ.</p>
+        <a class="button" href="https://t.me/FORI_FLL" data-draft="Артём, здравствуйте! Хочу обсудить сайт. Мой бизнес: ">Написать в Telegram</a>
+      </div>
+      <div class="contact-brief">
+        <h3>С чего начать сообщение</h3>
+        <ul>
+          <li>Чем вы занимаетесь и кто ваши клиенты?</li>
+          <li>Что посетитель должен сделать на сайте?</li>
+          <li>Если есть, приложите ссылку на текущий сайт или пример.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="shell footer"><a class="brand" href="#top" aria-label="FORI, к началу страницы">FORI</a><a href="https://t.me/FORI_FLL">Telegram</a></footer>
+  <dialog id="case-dialog" aria-label="Просмотр проекта">
+    <div class="dialog-controls">
+      <div class="dialog-bar"><div><strong id="case-name"></strong><span class="mono" id="case-type"></span></div><form method="dialog"><button class="button outline small">Закрыть кейс</button></form></div>
+      <nav class="case-nav" aria-label="Навигация по кейсам">
+        <button class="button outline small" id="previous-case" type="button">Предыдущий</button>
+        <button class="button outline small" id="next-case" type="button">Следующий</button>
+      </nav>
+      <div class="case-tabs" role="group" aria-label="Просмотр проекта">
+        <button type="button" id="case-demo" aria-pressed="false">Сайт</button>
+        <button type="button" id="case-overview" aria-pressed="true">О кейсе</button>
+      </div>
+    </div>
+    <div class="case-content">
+    <iframe id="case-frame" title="Интерактивный предпросмотр проекта" sandbox="allow-scripts allow-same-origin" hidden></iframe>
+    <img class="dialog-image" alt="" id="case-image">
+    <div class="dialog-body"><h2 id="case-title" aria-live="polite"></h2><p id="case-description"></p><h3>Что реализовано</h3><ul id="case-features"></ul>
+      <a id="case-contact" class="button" href="https://t.me/FORI_FLL">Обсудить похожий проект</a>
+    </div>
+    </div>
+    <div class="case-burn" aria-hidden="true" hidden><div></div></div>
+  </dialog>
+</body>
+</html>

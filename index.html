@@ -6,8 +6,8 @@
   <meta name="description" content="Артём FORI — веб-разработчик. Создаю лендинги, сайты компаний и каталоги с онлайн-записью. Посмотрите живые примеры и обсудите проект в Telegram.">
   <meta name="theme-color" content="#08090b">
   <title>FORI — Артём, разработка сайтов для бизнеса</title>
-  <link rel="stylesheet" href="style.css?v=star-drift">
-  <script src="app.js?v=refformat-original" defer></script>
+  <link rel="stylesheet" href="style.css?v=menu">
+  <script src="app.js?v=menu" defer></script>
 </head>
 <body id="top">
   <div class="site-intro" id="site-intro" hidden>
@@ -23,23 +23,38 @@
     <a class="brand" href="#top">FORI</a>
     <div class="masthead-actions">
       <a class="header-contact" href="https://t.me/FORI_FLL">Telegram</a>
-      <button class="portfolio-menu-toggle button outline small" type="button" aria-haspopup="dialog" aria-controls="portfolio-menu">Меню <span aria-hidden="true"></span></button>
+      <button class="portfolio-menu-toggle button outline small" type="button" aria-haspopup="dialog" aria-controls="portfolio-menu" aria-expanded="false">Меню <span aria-hidden="true"></span></button>
     </div>
   </header>
   <dialog id="portfolio-menu" aria-label="Навигация">
-    <div class="portfolio-shutters" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-    <div class="portfolio-menu-top">
-      <span class="brand">FORI</span>
-      <form method="dialog"><button class="button outline" autofocus>Закрыть меню</button></form>
+    <div class="portfolio-menu-panel">
+      <div class="portfolio-menu-top">
+        <div class="portfolio-menu-identity"><span class="brand">FORI</span><span>Артём · Веб-разработчик</span></div>
+        <button class="button outline" type="button" data-menu-close autofocus>Закрыть меню</button>
+      </div>
+      <div class="portfolio-menu-body">
+        <nav id="site-nav" aria-label="Основная навигация">
+          <a href="#work" aria-labelledby="menu-work" aria-describedby="menu-work-detail"><strong id="menu-work">Работы</strong><small id="menu-work-detail">Живые сайты и разборы проектов</small></a>
+          <a href="#services" aria-labelledby="menu-services" aria-describedby="menu-services-detail"><strong id="menu-services">Услуги</strong><small id="menu-services-detail">Лендинги, каталоги и онлайн-запись</small></a>
+          <a href="#process" aria-labelledby="menu-process" aria-describedby="menu-process-detail"><strong id="menu-process">Как работаю</strong><small id="menu-process-detail">От идеи до запуска сайта</small></a>
+          <a href="#about" aria-labelledby="menu-about" aria-describedby="menu-about-detail"><strong id="menu-about">Резюме</strong><small id="menu-about-detail">Опыт, образование и связь по вакансии</small></a>
+        </nav>
+        <div class="portfolio-menu-extra">
+          <div class="portfolio-menu-contact">
+            <h2>Обсудим ваш сайт</h2>
+            <p>Расскажите о задаче. Помогу выбрать формат, даже если пока нет ТЗ.</p>
+            <a class="button" href="https://t.me/FORI_FLL" data-draft="Артём, здравствуйте! Хочу обсудить сайт.">Написать в Telegram</a>
+          </div>
+          <div class="portfolio-menu-picks">
+            <h2>Быстрый доступ к кейсам</h2>
+            <div class="portfolio-menu-cards">
+              <button type="button" data-menu-case="refformat" aria-haspopup="dialog"><img src="assets/refformat.webp" alt="" width="960" height="600" loading="lazy"><span>Refformat</span></button>
+              <button type="button" data-menu-case="apartment" aria-haspopup="dialog"><img src="assets/apartment.jpg" alt="" width="960" height="600" loading="lazy"><span>APARTMENT</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <nav id="site-nav" aria-label="Основная навигация">
-      <a href="#work">Работы</a>
-      <a href="#services">Услуги</a>
-      <a href="#process">Как работаю</a>
-      <a href="#about">Резюме</a>
-    </nav>
-    <a class="button portfolio-menu-contact" href="https://t.me/FORI_FLL">Написать в Telegram</a>
-    <div class="portfolio-menu-orbit" aria-hidden="true"></div>
   </dialog>
   <main>
     <section class="shell hero" aria-labelledby="intro">

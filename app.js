@@ -1,4 +1,3 @@
-const localPreview = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
 const contactUrl = 'https://t.me/FORI_FLL';
 
 function telegramDraft(message) {
@@ -16,8 +15,7 @@ document.querySelectorAll('.service-item').forEach((item) => {
 
 const cases = {
   refformat: {
-    preview: localPreview ? 'http://127.0.0.1:8766/' : 'work/refformat/index.html',
-    previewLabel: localPreview ? 'Сайт' : 'Обзор демо',
+    preview: 'work/refformat/index.html?v=original',
     description: 'Демо сайта стоматологии с записью на приём. Расписание в проекте демонстрационное.',
     features: ['Интерактивный 3D-элемент на первом экране', 'Выбор врача и свободного времени', 'Админ-панель для заявок, записей и расписания врачей'],
   },
@@ -163,7 +161,6 @@ function updateGallery() {
   }
   galleryType.textContent = button.querySelector('.type').textContent;
   galleryDescription.textContent = project.description;
-  galleryOpen.textContent = project.previewLabel === 'Обзор демо' ? 'Смотреть обзор' : 'Открыть сайт';
   galleryFeatures.replaceChildren(...project.features.map((feature) => {
     const item = document.createElement('li');
     item.textContent = feature;
@@ -278,7 +275,6 @@ function renderCase(index) {
   const project = cases[button.dataset.case];
   previewUrl = project.preview;
   previewButton.hidden = !previewUrl;
-  previewButton.textContent = project.previewLabel || 'Сайт';
   if (previewFrame.getAttribute('src') !== previewUrl) previewFrame.removeAttribute('src');
   setCaseView(Boolean(previewUrl));
   caseTitle.textContent = titleOf(caseSequence[index]);
@@ -488,8 +484,7 @@ const wallCards = wall.querySelector('.wall-cards');
 function makeProjectCard(project, className, loading) {
   const card = project.querySelector('button').cloneNode(true);
   card.className = className;
-  const isOverview = cases[card.dataset.case].previewLabel === 'Обзор демо';
-  card.setAttribute('aria-label', (isOverview ? 'Смотреть обзор ' : 'Полистать сайт ') + titleOf(project));
+  card.setAttribute('aria-label', 'Полистать сайт ' + titleOf(project));
   card.querySelector('img').loading = loading;
   card.querySelector('.open').remove();
   card.addEventListener('click', () => {
